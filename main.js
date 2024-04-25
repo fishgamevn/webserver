@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 // POST request handler for a specific route ('/submit')
 app.post('/submit', function(req, res) {
     let data = req.body;
-    console.log(" body --->> ", data);
+    console.log(" body --->> ", data.msg);
     res.send('Data Received: ' + JSON.stringify(data));
 });
 
