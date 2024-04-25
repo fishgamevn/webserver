@@ -13,7 +13,7 @@ app.post('/submit', function(req, res) {
     // You can access request data using req.body
     // For example: const formData = req.body;
     // Process the data and send an appropriate response
-    console.log(" bodey : ", req.body);
+    console.log(" bodey : ", req);
     res.send("Received a POST request!");
 });
 
