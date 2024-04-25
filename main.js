@@ -1,5 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
 const port = 8080;
 
 // GET request handler for the root URL ('/')
@@ -9,12 +14,9 @@ app.get('/', function(req, res) {
 
 // POST request handler for a specific route ('/submit')
 app.post('/submit', function(req, res) {
-    // Handle the POST request here
-    // You can access request data using req.body
-    // For example: const formData = req.body;
-    // Process the data and send an appropriate response
-    console.log(" bodey : ", req);
-    res.send("Received a POST request!");
+    let data = req.body;
+    console.log(" body --->> ", data);
+    res.send('Data Received: ' + JSON.stringify(data));
 });
 
 app.listen(port, function() {
